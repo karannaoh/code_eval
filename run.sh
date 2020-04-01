@@ -1,3 +1,3 @@
 #!/bin/bash
 gcc -o myapp /usr/src/demo.c
-./myapp
+./myapp < /usr/testcases/testcase1

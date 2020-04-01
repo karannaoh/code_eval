@@ -15,7 +15,7 @@ def check():
     f.close()
     temp=b''
     while(temp.decode('utf-8')==''):
-        temp =  client.containers.run("comp:latest", "../run.sh", volumes={'/home/naoh/codeeval/codes/':{'bind':'/usr/src/','mode':'rw'}},detach=False, stdout=True)
+        temp =  client.containers.run("comp:latest", "./run.sh", volumes={'/home/naoh/codeeval/codes/':{'bind':'/usr/src/','mode':'rw'}, '/home/naoh/codeeval/testcases/':{'bind':'/usr/testcases/','mode':'rw'}},detach=False, stdout=True)
     os.remove("codes/"+username+'.c')    
     return temp
 
